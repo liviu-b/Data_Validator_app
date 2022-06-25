@@ -1,3 +1,4 @@
-# Proiect UTC-N data valiadtor app with C++
+# Proiect UTC-N 
+Data valiadtor app with C++
 Console App
  
