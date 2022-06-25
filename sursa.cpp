@@ -5,8 +5,7 @@
 using namespace std;
 
 
-int validare(string cnp)
-{
+int validare(string cnp) {
 	int k[12] = { 2,7,9,1,4,6,3,5,8,2,7,9 }; 
 	int s = 0;
 	for (int i = 0; i < 12; i++)
@@ -20,8 +19,8 @@ int validare(string cnp)
 	else
 		return 0;
 }
-int an(string cnp)
-{
+
+int an(string cnp) {
 	int a;
 	a = (cnp[1] - '0') * 10;
 	a += (cnp[2] - '0');
@@ -40,22 +39,21 @@ int luna(string cnp)
 	l += (cnp[4] - '0');
 	return l;
 }
-int ziua(string cnp)
-{
+
+int ziua(string cnp) {
 	int z;
 	z = (cnp[5] - '0') * 10;
 	z += (cnp[6] - '0');
 	return z;
 }
-bool isChar(char c)
-{
+
+bool isChar(char c) {
 	return ((c >= 'a' && c <= 'z')
 		|| (c >= 'A' && c <= 'Z'));
 }
 
 
-bool isDigit(const char c)
-{
+bool isDigit(const char c) {
 	return (c >= '0' && c <= '9');
 }
 
@@ -64,24 +62,17 @@ bool is_valid(string email)
 {
 
 	if (!isChar(email[0])) {
-
-		
 		return 0;
 	}
 
 	int At = -1, Dot = -1;
-
-	
 	for (int i = 0;
 		i < email.length(); i++) {
-
 		if (email[i] == '@') {
-
 			At = i;
 		}
-
+		
 		else if (email[i] == '.') {
-
 			Dot = i;
 		}
 	}
@@ -89,16 +80,13 @@ bool is_valid(string email)
 	if (At == -1 || Dot == -1)
 		return 0;
 
-
 	if (At > Dot)
 		return 0;
 
-	
 	return !(Dot >= (email.length() - 1));
 }
 
-int main()
-{
+int main() {
 	string nume;
 	string prenume ;
 	string cnp;
@@ -125,10 +113,8 @@ int main()
 	cout << endl;
 	int greseala = 0;
 
-	for (int i = 0; i < nume.length(); i++)
-	{
-		if ('A' > nume[i] || nume[i] > 'Z')
-		{
+	for (int i = 0; i < nume.length(); i++) {
+		if ('A' > nume[i] || nume[i] > 'Z') {
 			greseala++;
 			cout << "Nume invalid" << endl;
 			break;
@@ -138,15 +124,13 @@ int main()
 	string word = "";
 	vector<string> prenumeVect;
 	
-	for (auto x : prenume)
-	{
-		if (x == ' ')
-		{
+	for (auto x : prenume) {
+		if (x == ' ') {
 			prenumeVect.push_back(word);
 			word = "";
 		}
 		else {
-			word = word + x;
+		 word = word + x;
 		}
 	}
 
